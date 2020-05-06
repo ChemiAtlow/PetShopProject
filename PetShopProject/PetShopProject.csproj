@@ -15,8 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
+    <Folder Include="Views\Catalog\" />
+    <Folder Include="Views\Animal\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Shared\Components\Comment\" />
+    <Folder Include="Views\Shared\Components\Pagination\" />
   </ItemGroup>
 
 </Project>

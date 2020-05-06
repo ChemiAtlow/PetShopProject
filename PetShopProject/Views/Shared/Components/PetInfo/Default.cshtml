@@ -1,0 +1,36 @@
+﻿@using PetShopProject.ViewComponents
+@model Animal
+
+<article class="card product-item">
+    <header class="card__header">
+        <h1 class="product__title">@Model.Name</h1>
+    </header>
+    <div class="card__image">
+        <img src="~/images/@Model.PictureName" alt="@Model.Name" />
+    </div>
+    @if (ViewBag.InfoType is PetInfoViewComponent.PetInfoType infoType)
+    {
+        @if (infoType == PetInfoViewComponent.PetInfoType.HomePage)
+        {
+            <div class="card__content">
+                <h2 class="product__price">תגובות: @Model.Comments.Count</h2>
+                <p class="product__description">@Model.Description</p>
+            </div>
+        }
+        else if (infoType == PetInfoViewComponent.PetInfoType.Admin)
+        {
+            <div class="card__actions">
+                <a class="btn" asp-controller="Admin" asp-action="EditAnimal" asp-route-id="@Model.AnimalId">ערוך</a>
+                <form asp-action="DeleteAnimal" asp-route-id="@Model.AnimalId">
+                    <button class="btn" type="submit">מחק</button>
+                </form>
+            </div>
+        }
+        else
+        {
+            <div class="card__actions">
+                <a class="btn" asp-controller="Animal" asp-action="Index" asp-route-id="@Model.AnimalId">פרטים נוספים</a>
+            </div>
+        }
+    }
+</article>
