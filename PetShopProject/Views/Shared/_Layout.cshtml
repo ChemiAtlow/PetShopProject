@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pet Shop - @ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/navigation.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="main-header">
+        <button id="side-menu-toggle">תפריט</button>
+        <nav class="main-header__nav">
+            <ul class="main-header__item-list main-header__brand">
+                <li class="main-header__item">
+                    <a asp-controller="Home" asp-action="Index" class="@(ViewBag.ActivePage == "home" ? "active" : "")">Pet Shop</a>
+                </li>
+            </ul>
+            <ul class="main-header__item-list">
+                <li class="main-header__item">
+                    <a asp-controller="Catalog" asp-action="Index" class="@(ViewBag.ActivePage == "catalog" ? "active" : "")">קטלוג</a>
+                </li>
+                <li class="main-header__item">
+                    <a asp-controller="Admin" asp-action="Index" class="@(ViewBag.ActivePage == "admin" ? "active" : "")">ניהול</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="backdrop"></div>
+    </header>
+    <main class="main-main">
+        @RenderBody()
+    </main>
+    <footer class="main-footer">
+        <span>&copy; 2020 - Asp.Net Core Course - Chemi Atlow</span>
+    </footer>
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @if (IsSectionDefined("Validation"))
+    {
+        <script src="~/js/jquery-validate.min.js"></script>
+        @RenderSection("Validation")
+    }
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

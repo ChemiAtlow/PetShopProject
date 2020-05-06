@@ -1,0 +1,345 @@
+﻿* {
+    box-sizing: border-box;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 3.5rem 0 60px 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-main {
+    padding: 1rem;
+    margin: 3.5rem auto;
+}
+
+hr {
+    margin: 3rem 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: .7rem;
+    padding: 1rem 0;
+}
+
+.card__header, .card__content {
+    padding: 1rem;
+}
+.card__header h1,
+.card__content h2,
+.card__content p {
+        margin: 0;
+}
+
+.card__image {
+    text-align: center;
+    width: 100%;
+    height: 10rem;
+}
+.card__image img {
+    max-width: 100%;
+    max-height: 10rem;
+}
+
+.card__actions {
+    padding: 1rem;
+    text-align: center;
+}
+
+.card__actions form {
+    display: inline;
+}
+
+.card__actions button,
+.card__actions a {
+    text-decoration: none;
+    margin: 0 0.25rem;
+}
+
+.image {
+    max-height: 20rem;
+}
+
+.image img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.product-item {
+    width: 24rem;
+    max-width: 95%;
+    margin: 1rem;
+}
+
+.product__title {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.product__price {
+    text-align: center;
+    color: #4d4d4d;
+    margin-bottom: 0.5rem;
+}
+
+.product__description {
+    text-align: center;
+    max-height: 12rem;
+    overflow-y: auto;
+}
+
+.animal-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+}
+.form-control {
+    margin: 1rem 0;
+}
+.form-control label,
+.form-control input,
+.form-control select,
+.form-control textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+    padding: 0.2rem 0.4rem;
+}
+.form-control input,
+.form-control select,
+.form-control textarea {
+    border: 1px solid #0846c2;
+    font: inherit;
+    border-radius: 8px;
+    outline: none;
+    transition: border .6s ease;
+    resize: none;
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    border-color: #54a2fc;
+}
+.form-control.invalid textarea,
+.form-control.invalid input,
+.form-control.invalid label {
+    color: #a30202;
+    border-color: #a30202;
+}
+.form-control.invalid textarea:focus,
+.form-control.invalid input:focus,
+.form-control.invalid label:focus {
+        border-color: #ff9595;
+}
+.form-control.valid textarea,
+.form-control.valid input,
+.form-control.valid label {
+    color: #0cb606;
+    border-color: #0cb606;
+}
+
+.form-control.valid textarea:focus,
+.form-control.valid input:focus,
+.form-control.valid label:focus {
+    border-color: #91f88d;
+}
+
+.pagination {
+    margin: 2rem 0;
+    text-align: center;
+    direction: ltr;
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.pagination a {
+    text-decoration: none;
+    border-radius: 8px;
+    color: #0846c2;
+    padding: 0.5rem 0.8rem;
+    border: #0846c2 1px solid;
+    margin: 0 1rem;
+    transition: color .9s, background-color .9s;
+}
+
+.pagination a.more {
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.pagination a:hover,
+.pagination a:active,
+.pagination a.active {
+    color: white;
+    background-color: #0846c2;
+    border: white 1px solid;
+}
+
+.user-message {
+    margin: .5rem auto;
+    border: 1px solid #0846c2;
+    background-color: #8ac1ff;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.user-message.user-message__error.empty {
+    display: none;
+}
+
+.user-message.user-message__error {
+    border-color: #a30202;
+    background-color: #ff9595;
+    color: #800;
+}
+
+.btn {
+    text-decoration: none;
+    font: inherit;
+    border: 1px solid #0846c2;
+    color: #0846c2;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    transition: color 1s ease, background-color 1s ease;
+    padding: 7px 15px;
+}
+
+.btn:active,
+.btn.active,
+.btn:focus,
+.btn:hover {
+    color: white;
+    background-color: #0846c2;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 7%;
+    left: 7%;
+    border: 1px solid #0846c2;
+    color: white;
+    background: #0846c2;
+    border-radius: 50%;
+    transition: color 1s ease, background-color 1s ease;
+    z-index: 10;
+    text-decoration: none;
+    font: inherit;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 36px;
+    box-shadow: 0 0 6px 4px rgba(8, 70, 194, 0.31);
+}
+
+.floating-btn:hover,
+.floating-btn:active,
+.floating-btn:focus {
+    transform:scale(1.1);
+    background-color: white;
+    color: #0846c2;
+}
+
+.code {
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 5px;
+    font-family: courier, monospace;
+    padding: 10px;
+    margin: 6px;
+    text-align: left;
+    white-space: pre;
+    direction: ltr;
+}
+
+.animal-detail {
+    width: 28rem;
+    max-width: 95%;
+}
+
+.comment-wrapper {
+    padding: 0 40px;
+}
+
+.comment-wrapper .bubble {
+    background: #afc9ff;
+    border-radius: 4px;
+    box-shadow: 5px 3px 5px #0000008c;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.comment-wrapper .bubble .txt {
+    padding: 8px 14px;
+}
+
+.comment-wrapper .bubble .txt .message {
+    margin: 0;
+    white-space: pre-wrap;
+}
+
+.comment-wrapper .bubble .bubble-arrow {
+    position: absolute;
+    width: 0;
+    bottom: 42px;
+    left: -4px;
+    height: 0;
+}
+
+.comment-wrapper .bubble .bubble-arrow:after {
+    content: "";
+    position: absolute;
+    border: 0 solid transparent;
+    border-top: 9px solid #afc9ff;
+    border-radius: 0 20px 0;
+    width: 15px;
+    height: 30px;
+    transform: rotate(145deg);
+}
+
+.hide {
+    display: none;
+}
+
+.main-footer {
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+@media (min-width: 768px) {
+    .image {
+        height: 20rem;
+    }
+    .user-message {
+        width: 30rem;
+        max-width: 100%;
+    }
+}
