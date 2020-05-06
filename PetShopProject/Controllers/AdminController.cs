@@ -34,6 +34,31 @@ namespace PetShopProject.Controllers
                 return View("Error", e);
             }
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteAnimal(int id)
+        {
+            try
+            {
+                string pictureName = await repository.DeleteAnimalAsync(id);
+                DeleteOldImage(pictureName);
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return View("Error", e);
+            }
+        }
         
+        /// <summary>
+        /// Delete the old picture of animal when deleted or updated it's picture.
+        /// </summary>
+        /// <param name="oldPictureName">Name of the olf picture's file.</param>
+        private void DeleteOldImage(string oldPictureName)
+        {
+            string fullPath = Path.Combine(webHostEnvironment.WebRootPath, "images", oldPictureName);
+            if (System.IO.File.Exists(fullPath))
+                System.IO.File.Delete(fullPath);
+        }
     }
 }
