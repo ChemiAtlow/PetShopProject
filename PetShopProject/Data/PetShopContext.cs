@@ -14,6 +14,7 @@ namespace PetShopProject.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Category>().HasData(PrePopulateHelper.Categories);
+            modelBuilder.Entity<Animal>().HasData(PrePopulateHelper.Animals);
         }
     }
 }
