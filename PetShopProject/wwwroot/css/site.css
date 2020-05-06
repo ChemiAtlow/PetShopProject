@@ -226,6 +226,10 @@ hr {
     transition: color 1s ease, background-color 1s ease;
     padding: 7px 15px;
 }
+.btn.danger {
+    color: #a30202;
+    border-color: #a30202;
+}
 
 .btn:active,
 .btn.active,
@@ -233,6 +237,14 @@ hr {
 .btn:hover {
     color: white;
     background-color: #0846c2;
+}
+
+.btn.danger:active,
+.btn.danger.active,
+.btn.danger:focus,
+.btn.danger:hover {
+    color: white;
+    background-color: #a30202;
 }
 
 .floating-btn {

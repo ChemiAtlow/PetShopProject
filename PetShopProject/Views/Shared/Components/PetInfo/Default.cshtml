@@ -22,7 +22,7 @@
             <div class="card__actions">
                 <a class="btn" asp-controller="Admin" asp-action="EditAnimal" asp-route-id="@Model.AnimalId">ערוך</a>
                 <form asp-action="DeleteAnimal" asp-route-id="@Model.AnimalId">
-                    <button class="btn" type="submit">מחק</button>
+                    <button class="btn danger" type="submit">מחק</button>
                 </form>
             </div>
         }
