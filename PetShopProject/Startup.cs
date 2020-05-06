@@ -21,7 +21,7 @@ namespace PetShopProject
         {
             services.AddTransient<IRepository, Repository>();
             string connString = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<PetShopContext>(options => options.UseSqlServer(connString));
+            services.AddDbContext<PetShopContext>(options => options.UseLazyLoadingProxies().UseSqlServer(connString));
             services.AddControllersWithViews();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PetShopContext ctx)
