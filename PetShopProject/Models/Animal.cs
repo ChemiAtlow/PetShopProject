@@ -27,7 +27,7 @@ namespace PetShopProject.Models
             public string Description { get; set; }
             [Display(Name = "קטגוריה")]
             public virtual Category Category { get; set; }
-            public virtual ICollection<Comment> Comments { get; set; }
+            public virtual List<Comment> Comments { get; set; }
 
             #region CategoryId for form
             [NotMapped]
