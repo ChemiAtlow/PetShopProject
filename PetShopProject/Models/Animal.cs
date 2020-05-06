@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using PetShopProject.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -38,7 +39,7 @@ namespace PetShopProject.Models
 
         #region File UPload
         [NotMapped]
-        [RequiredIfHasId(nameof(AnimalId), ErrorMessage = "לא בחרת תמונה!")]
+        [RequiredIfHasId(nameof(AnimalId))]
         [MaxFileSize(4 * 1024 * 1024)]
         [AllowedExtensions(".jpg", ".jpeg", ".png", ".gif")]
         [DataType(DataType.Upload)]
