@@ -25,8 +25,14 @@ namespace PetShopProject.Repositories
         {
             if (animal.AnimalId != 0)
             {
-                Animal current = await petShop.Animals.FindAsync(animal.AnimalId);
-                petShop.Entry(current).CurrentValues.SetValues(animal);
+                Animal local = petShop.Set<Animal>().Local.FirstOrDefault(entry => entry.AnimalId.Equals(animal.AnimalId));
+                if (local != null)
+                {
+                    // detach
+                    petShop.Entry(local).State = EntityState.Detached;
+                }
+                // set Modified flag in your entry
+                petShop.Entry(animal).State = EntityState.Modified;
             }
             else
             {
