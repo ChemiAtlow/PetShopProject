@@ -24,8 +24,9 @@ namespace PetShopProject
             services.AddDbContext<PetShopContext>(options => options.UseSqlServer(connString));
             services.AddControllersWithViews();
         }
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PetShopContext ctx)
         {
+            ctx.Database.EnsureCreated();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
