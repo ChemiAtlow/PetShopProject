@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Animal>
+@{
+    ViewBag.Title = "ניהול";
+    ViewBag.ActivePage = "admin";
+}
+@section scripts {
+    <script type="text/javascript">
+        $("select#category").val("@ViewBag.CurrentCategoryId");
+        $("select#category").change(function () {
+            let newLoc = '@Url.Action("Index", new { id = "----" })';
+            newLoc = newLoc.replace("----", $("select#category :selected").val());
+            window.location = newLoc;
+        })
+    </script>
+}
+<form class="animal-form">
+    <div class="form-control">
+        <label for="category">סנן לפי קטגוריה</label>
+        <select id="category" asp-items="@(new SelectList(ViewBag.Categories,"CategoryId","Name"))">
+            <option value="0">כל הקטגוריות</option>
+        </select>
+    </div>
+</form>
+<div class="grid">
+    @foreach (var animal in Model)
+    {
+        <vc:pet-info animal="@animal" info-type="Admin"></vc:pet-info>
+    }
+</div>
+<vc:pagination pagination="@ViewBag.Pagination"></vc:pagination>
+<a class="floating-btn" asp-action="EditAnimal">+</a>
