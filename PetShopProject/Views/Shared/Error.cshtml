@@ -1,0 +1,15 @@
+﻿@model Exception
+@{
+    ViewBag.Title = "עמוד הבית";
+}
+
+<div class="centered">
+    <h1>אירעה תקלה בשרת :/</h1>
+    @if (Model != null)
+    {
+        <p class="code">@Model.Message</p>
+    }
+    <p>לא הצלחנו לבצע את בקשתך.<br />אנו מתנצלים על חוסר הנוחות.</p>
+    <br />
+    <b>אנו פועלים לתיקון מהיר של התקלה.</b>
+</div>
