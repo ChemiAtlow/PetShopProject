@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Animal>
+
+@{
+    ViewBag.Title = "עמוד הבית";
+    ViewBag.ActivePage = "home";
+}
+
+<div class="centered">
+    <h1>בעלי החיים המשובחים ביותר בעיר!</h1>
+</div>
+<div class="grid">
+    @foreach (var animal in Model)
+    {
+        <vc:pet-info animal="@animal" info-type="HomePage"></vc:pet-info>
+    }
+</div>
