@@ -11,5 +11,9 @@ namespace PetShopProject.Data
 
         public PetShopContext(DbContextOptions<PetShopContext> options) : base(options) { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().HasData(PrePopulateHelper.Categories);
+        }
     }
 }
