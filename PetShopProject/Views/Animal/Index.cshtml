@@ -1,0 +1,52 @@
+﻿@model Animal
+
+@{
+    ViewBag.Title = Model.Name;
+    ViewBag.ActivePage = "catalog";
+}
+@section Validation {
+    <script type="text/javascript">
+        $("form.animal-form").validate({
+            normalizer: function (value) {
+                return $.trim(value);
+            },
+            rules: {
+                commentText: {
+                    required: true,
+                    rangelength: [3, 300]
+                },
+            },
+            wrapper: 'div'
+        });
+    </script>
+}
+
+<div class="grid">
+    <div class="centered animal-detail">
+        <h1>@Model.Name</h1>
+        <h2>קטגוריה: @Model.Category.Name</h2>
+        <hr />
+        <div class="image">
+            <img src="~/images/@Model.PictureName" alt="@Model.Name" />
+        </div>
+        <h2>גיל: @Model.Age</h2>
+        <p>@Model.Description</p>
+    </div>
+    <div class="centered animal-detail comment-wrapper">
+        <h1>תגובות:</h1>
+        <form class="animal-form" asp-action="AddComment">
+            <input type="hidden" value="@Model.AnimalId" name="animalId" />
+            <div class="form-control">
+                <label for="commentText">הוסף תגובתך</label>
+                <textarea id="commentText" name="commentText" rows="3"></textarea>
+            </div>
+            <div class="form-control">
+                <button type="submit" class="btn">הוסף תגובה</button>
+            </div>
+        </form>
+        @foreach (var comment in Model.Comments)
+        {
+            <vc:comment comment="comment"></vc:comment>
+        }
+    </div>
+</div>
