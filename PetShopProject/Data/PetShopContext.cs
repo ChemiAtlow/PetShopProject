@@ -15,6 +15,7 @@ namespace PetShopProject.Data
         {
             modelBuilder.Entity<Category>().HasData(PrePopulateHelper.Categories);
             modelBuilder.Entity<Animal>().HasData(PrePopulateHelper.Animals);
+            modelBuilder.Entity<Comment>().HasData(PrePopulateHelper.Comments);
         }
     }
 }

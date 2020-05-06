@@ -26,6 +26,38 @@
             new { AnimalId = 15, CategoryId = 4, Age = 2.9, Name = "דיסקוס", PictureName="15_diskus.png", Description = "דִּיסְקוּס (שם מדעי: Symphysodon) הוא שם של סוג ממשפחת האמנוניים הכולל שלושה מיני דגים, שמוצאם ממקווי מים מתוקים באגן האמזונאס. דגי הדיסקוס נפוצים מאוד כדגי נוי ונחשבים ליפים ויוקרתיים ביותר. הם מגודלים במספר מדינות ביבשת אסיה." },
             new { AnimalId = 16, CategoryId = 4, Age = 5.2, Name = "אלטום", PictureName="16_altom.jpg", Description = "מדובר בדג ממשפחת האמנוניים -Cichlidae, שמתאפיינים במבנה גוף דמוי דקר. דגים ממשפחה זו לרוב ניחנים באינטיליגנציה גבוהה ולעומת רוב בדגים שומרים על צאצאיהם בתקופת ההתפתחות. למשפחה תפוצה כלל עולמית באיזורים טרופיים וסובטרופיים, ובמקרים מסויימים מדובר במשפחת הדגים הדומיננטית באותו מקווה מים. משפחת האמנוניים, או בשמם העממי ציקלידים, כוללת לפחות 1650 זנים ידועים מה שהופך אותה לאחת ממשפחות החולייתנים הגדולות ביותר, ומהווה את משפחת הדגים הפופולארית ביותר בין דגי האקווריום." }
         };
-        
+        public static object[] Comments = new object[]
+        {
+            new { CommentId = 1, AnimalId = 1, CommentText = "נראה כמו וולדמורט של החתולים 🤔"},
+            new { CommentId = 2, AnimalId = 2, CommentText = "נמר מיניאטורי! 😍"},
+            new { CommentId = 30, AnimalId = 2, CommentText = "מזכיר לי חבר ילדות שלי!"},
+            new { CommentId = 3, AnimalId = 3, CommentText = "אין על Grumpy Cat 😾"},
+            new { CommentId = 4, AnimalId = 4, CommentText = "💩"},
+            new { CommentId = 5, AnimalId = 4, CommentText = "מה זה הדבר הזה 😰"},
+            new { CommentId = 6, AnimalId = 5, CommentText = "ורנון דרסלי בגרסה הכלבית! 🐶"},
+            new { CommentId = 7, AnimalId = 5, CommentText = "אוי, האושר בעיניים!"},
+            new { CommentId = 8, AnimalId = 6, CommentText = "שלום, יש לי פודלית ננסית והיא לפעמים עושה פיפי על המיטות כאשר אנחנו לא בבית, בנוסף היא עושה את צרכיה בלילה. איך אפשר למנוע ממנה לעשות זאת?"},
+            new { CommentId = 9, AnimalId = 6, CommentText = "לפודל שלנו יש הפרשה חומה מהעין האם זאת דלקת?"},
+            new { CommentId = 10, AnimalId = 7, CommentText = "האם אפשר לאלף אותו שלא יעשה את צרכיו בבית? 💩"},
+            new { CommentId = 11, AnimalId = 7, CommentText = " אם משאירים אותו לכמה שעות הוא עושה רעשים?"},
+            new { CommentId = 12, AnimalId = 7, CommentText = "האם הוא נוחר בשנתו?"},
+            new { CommentId = 13, AnimalId = 8, CommentText = "יש לי גור בן 4 שבועות מסוג האסקי סיבירי צבע העניים שלו כחול ים. אני חושב שהוא עיוור. איך אוכל לברר זאת?"},
+            new { CommentId = 14, AnimalId = 8, CommentText = "היי, אני רוצה כלב ואמא שלי מוכנה רק כלב בלי נשירת שיער כמו פודל או יורקשייר... אבל אני רוצה האסקי סיבירי, יש לו נשירה?"},
+            new { CommentId = 15, AnimalId = 8, CommentText = "יש לי כלב האסקי סיבירי בין חודש ושבוע ורציתי לדעת אם אני כבר יכול להתחיל ללמד אותו לא לעשות את הצרכים בבית ואיך?"},
+            new { CommentId = 16, AnimalId = 8, CommentText = "ישש לי כלב מסוג האסקי סיבירי והוא מיילל כל הזמן. כדאי להביא עוד כלב לבית מסוג זה?"},
+            new { CommentId = 17, AnimalId = 9, CommentText = "חיה נוראית. לא כיף לי איתה!"},
+            new { CommentId = 18, AnimalId = 10, CommentText = "בלי ספק חיה נוראי.\nהלשלשת שלה זו מכה שאין לה מענה!"},
+            new { CommentId = 19, AnimalId = 10, CommentText = "אל תתקרבו לחיה הזו! היא תנכר לכם במוח כל היום!"},
+            new { CommentId = 20, AnimalId = 11, CommentText = "אמרת כאב ראש אמרת קקדו לבן."},
+            new { CommentId = 21, AnimalId = 12, CommentText = "לפחות צבעים יפים יש לה 🤷🏼‍♂️"},
+            new { CommentId = 22, AnimalId = 13, CommentText = "תכל'ס אין על דגי זהב..."},
+            new { CommentId = 26, AnimalId = 13, CommentText = "אפשר לאכול דגי זהב בתור סושי?"},
+            new { CommentId = 23, AnimalId = 14, CommentText = "לא הבנתי מה אפריקאי בציקליד הזה!"},
+            new { CommentId = 24, AnimalId = 15, CommentText = "ואוו! חיה מרהיבה!"},
+            new { CommentId = 27, AnimalId = 15, CommentText = "ללא ספק מהדגים היפים שראיתי!"},
+            new { CommentId = 28, AnimalId = 15, CommentText = "מטורף לגמרי!"},
+            new { CommentId = 25, AnimalId = 16, CommentText = "איזה מין שם זה אלטום?"},
+            new { CommentId = 29, AnimalId = 16, CommentText = "לא מועיל, אבל גם לא מזיק..."},
+        };
     }
 }
