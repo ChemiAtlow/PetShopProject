@@ -1,5 +1,4 @@
-﻿using AspNetCoreCourseProject.ValidationAttrs;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,9 +8,6 @@ using System.Threading.Tasks;
 
 namespace PetShopProject.Models
 {
-
-    namespace AspNetCoreCourseProject.Models
-    {
         public class Animal
         {
             public int AnimalId { get; set; }
@@ -35,6 +31,7 @@ namespace PetShopProject.Models
 
             #region CategoryId for form
             [NotMapped]
+            [ValidCategory]
             [Required(AllowEmptyStrings = false, ErrorMessage = "לא בחרת קטגוריה!")]
             [Display(Name = "קטגוריה")]
             public int? FormCategoryId { get; set; }
@@ -43,6 +40,9 @@ namespace PetShopProject.Models
 
             #region File UPload
             [NotMapped]
+            [RequiredIfHasId(nameof(AnimalId), ErrorMessage = "לא בחרת תמונה!")]
+            [MaxFileSize(4 * 1024 * 1024)]
+            [AllowedExtensions(".jpg", ".jpeg", ".png", ".gif")]
             [DataType(DataType.Upload)]
             [Display(Name = "תמונה מייצגת")]
             public IFormFile FormFile { get; set; }

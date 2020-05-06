@@ -1,4 +1,4 @@
-﻿using PetShopProject.Models.AspNetCoreCourseProject.Models;
+﻿using PetShopProject.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace PetShopProject.Models
