@@ -23,8 +23,10 @@ namespace PetShopProject.Repositories
 
         public async Task AddOrEditAnimalAsync(Animal animal)
         {
+            //Check if animal has got an Id, and if so update it.
             if (animal.AnimalId != 0)
             {
+                //Check if animal exists loacally, and if it is detach it, so can update it.
                 Animal local = petShop.Set<Animal>().Local.FirstOrDefault(entry => entry.AnimalId.Equals(animal.AnimalId));
                 if (local != null)
                 {
