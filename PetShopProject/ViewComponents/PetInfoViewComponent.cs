@@ -4,8 +4,14 @@ using System.Threading.Tasks;
 
 namespace PetShopProject.ViewComponents
 {
+    /// <summary>
+    /// View component for showing Pet's information.
+    /// </summary>
     public class PetInfoViewComponent : ViewComponent
     {
+        /// <summary>
+        /// Type of info to show, by location of Pet info.
+        /// </summary>
         public enum PetInfoType { HomePage, Catalog, Admin };
         public async Task<IViewComponentResult> InvokeAsync(Animal animal, PetInfoType infoType)
         {

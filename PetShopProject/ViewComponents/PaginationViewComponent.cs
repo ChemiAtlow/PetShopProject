@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace PetShopProject.ViewComponents
 {
+    /// <summary>
+    /// View components for pagination.
+    /// </summary>
     public class PaginationViewComponent : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync(PaginationData pagination)
