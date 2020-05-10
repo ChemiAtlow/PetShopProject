@@ -3,6 +3,9 @@ using PetShopProject.Repositories;
 
 namespace PetShopProject.Controllers
 {
+    /// <summary>
+    /// Controller for Home page with two most commented animals.
+    /// </summary>
     public class HomeController : Controller
     {
         private readonly IRepository repository;
@@ -12,6 +15,9 @@ namespace PetShopProject.Controllers
             this.repository = repository;
         }
 
+        /// <summary>
+        /// Home page.
+        /// </summary>
         public IActionResult Index()
         {
             return View(repository.GetTwoMostCommentedAnimals());
