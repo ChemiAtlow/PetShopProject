@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace PetShopProject.Controllers
 {
+    /// <summary>
+    /// Controller for admin abillities - Create, Update & Delete animals.
+    /// </summary>
     public class AdminController : Controller
     {
         private readonly IRepository repository;
@@ -19,6 +22,12 @@ namespace PetShopProject.Controllers
             this.repository = repository;
             this.webHostEnvironment = webHostEnvironment;
         }
+        /// <summary>
+        /// Main Admin page. show all animals, by category.
+        /// </summary>
+        /// <param name="id">Id of category to show.</param>
+        /// <param name="page">Page to show (pagination)</param>
+        /// <returns></returns>
         public IActionResult Index(int id = 0, int page = 1)
         {
             try
@@ -34,6 +43,11 @@ namespace PetShopProject.Controllers
                 return View("Error", e);
             }
         }
+        
+        /// <summary>
+        /// Action for deleting an animal.
+        /// </summary>
+        /// <param name="id">Id of animal to be deleted.</param>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteAnimal(int id)
@@ -49,6 +63,11 @@ namespace PetShopProject.Controllers
                 return View("Error", e);
             }
         }
+
+        /// <summary>
+        /// Action for getting the edit page. if no id was sent, empty page sent, for creating new one.
+        /// </summary>
+        /// <param name="id">Id of animal to edit, or 0 to create new animal.</param>
         [HttpGet]
         public async Task<IActionResult> EditAnimal(int id = 0)
         {
@@ -62,6 +81,11 @@ namespace PetShopProject.Controllers
 
             return View(animal);
         }
+
+        /// <summary>
+        /// Action to save new animal, or update existing animal.
+        /// </summary>
+        /// <param name="animal">Animal to save / edit.</param>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EditAnimal(Animal animal)
