@@ -22,6 +22,13 @@ namespace PetShopProject
             services.AddTransient<IRepository, Repository>();
             string connString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<PetShopContext>(options => options.UseLazyLoadingProxies().UseSqlServer(connString));
+            services.AddWebOptimizer(pipeline =>
+            {
+                pipeline.CompileScssFiles();
+                pipeline.MinifyCssFiles();
+                pipeline.MinifyHtmlFiles();
+                pipeline.MinifyJsFiles();
+            });
             services.AddControllersWithViews();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, PetShopContext ctx)
@@ -31,6 +38,8 @@ namespace PetShopProject
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseWebOptimizer();
 
             app.UseStaticFiles();
 
