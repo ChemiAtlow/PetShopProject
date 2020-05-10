@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using PetShopProject.Data;
 using PetShopProject.Models;
 using System;
@@ -13,11 +14,12 @@ namespace PetShopProject.Repositories
         /// <summary>
         /// Amount of animals aloud on page
         /// </summary>
-        public const int AnimalsPerPage = 6;
+        public readonly int AnimalsPerPage;
         private readonly PetShopContext petShop;
 
-        public Repository(PetShopContext petShop)
+        public Repository(IConfiguration configuration, PetShopContext petShop)
         {
+            AnimalsPerPage = configuration.GetValue("AnimalsPerPage", 6);
             this.petShop = petShop;
         }
 
