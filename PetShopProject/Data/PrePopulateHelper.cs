@@ -2,12 +2,18 @@
 {
     public static class PrePopulateHelper
     {
+        /// <summary>
+        /// Seeded Categories
+        /// </summary>
         public static object[] Categories = new object[] {
             new { CategoryId = 1, Name = "חתולים"},
             new { CategoryId = 2, Name = "כלבים"},
             new { CategoryId = 3, Name = "ציפורים"},
             new { CategoryId = 4, Name = "דגים"},
         };
+        /// <summary>
+        /// Seeded Animals.
+        /// </summary>
         public static object[] Animals = new object[] {
             new { AnimalId = 1, CategoryId = 1, Age = 2.4, Name = "חתול פרסי", PictureName="1_persian.jpg", Description = "מוצאו של החתול הפרסי, או כפי שנקרא בזמנו, פשוט \"חתול ארוך שיער\", הוא בפרס ובארצות אסיה התיכונה. בספרות המקצועית הוזכר ה\"פרסי\" בפעם הראשונה ב-1876 בשם \"החתול האסיאתי\", אך כבר כ-300 שנה לפני כן, במאה השש עשרה, נראו חתולים אלה באירופה, בתחילה באיטליה וצרפת. לשם הגיעו על ידי דיפלומטים שביקרו בפרס וסביבתה, התלהבו ושלחו אותם לארצותיהם באירופה. בתקופה זו מוכרים חתולים ארוכי פרווה נוספים - חתולי האנגורה. מוצאם בטורקיה, והם אבות אבותיהם של החתולים מגזע ה-Turkish Angora. גם חתולים אלה הגיעו לארצות אירופה ובעיקר לאנגליה."},
             new { AnimalId = 2, CategoryId = 1, Age = 3.1, Name = "חתול בנגלי", PictureName="2_bangali.jpg", Description = "החתול הבנגלי הוא גזע חדש יחסית. הגזע פותח להיות בעל אופי חברותי ויחד עם זאת להציג מראה של חתול פראי. אין להתבלבל עם טיגריס בנגלי שמו של החתול הבנגלי נגזר משם אבותיו חתול נמרי בנגלי (Prionailurus bengalensis). תחילתו של הגזע הייתה בשנת 1963 כאשר חוקר אמריקאי ערך מחקר בנושא לוקמיה של חתולים והרביע חתולי בר עם חתולי בית. משום שהרבעה זו היא עירוב בין שני מיני בעלי חיים שונים, הצאצאים של הדור הראשון היו לרוב עקרים. את הדור הראשון והשני מרביעים בדרך כלל עם חתול בית או חתולי בנגל אחרים. החתול נחשב חתול מהגזע הבנגלי כשהוא לפחות במרחק דור רביעי מחתול הבר האסיאתי." },
@@ -26,6 +32,9 @@
             new { AnimalId = 15, CategoryId = 4, Age = 2.9, Name = "דיסקוס", PictureName="15_diskus.png", Description = "דִּיסְקוּס (שם מדעי: Symphysodon) הוא שם של סוג ממשפחת האמנוניים הכולל שלושה מיני דגים, שמוצאם ממקווי מים מתוקים באגן האמזונאס. דגי הדיסקוס נפוצים מאוד כדגי נוי ונחשבים ליפים ויוקרתיים ביותר. הם מגודלים במספר מדינות ביבשת אסיה." },
             new { AnimalId = 16, CategoryId = 4, Age = 5.2, Name = "אלטום", PictureName="16_altom.jpg", Description = "מדובר בדג ממשפחת האמנוניים -Cichlidae, שמתאפיינים במבנה גוף דמוי דקר. דגים ממשפחה זו לרוב ניחנים באינטיליגנציה גבוהה ולעומת רוב בדגים שומרים על צאצאיהם בתקופת ההתפתחות. למשפחה תפוצה כלל עולמית באיזורים טרופיים וסובטרופיים, ובמקרים מסויימים מדובר במשפחת הדגים הדומיננטית באותו מקווה מים. משפחת האמנוניים, או בשמם העממי ציקלידים, כוללת לפחות 1650 זנים ידועים מה שהופך אותה לאחת ממשפחות החולייתנים הגדולות ביותר, ומהווה את משפחת הדגים הפופולארית ביותר בין דגי האקווריום." }
         };
+        /// <summary>
+        /// Seeded Comments.
+        /// </summary>
         public static object[] Comments = new object[]
         {
             new { CommentId = 1, AnimalId = 1, CommentText = "נראה כמו וולדמורט של החתולים 🤔"},
