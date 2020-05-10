@@ -1,0 +1,24 @@
+﻿$mobileMaxWidth: 48rem;
+$primaryColor: #0846c2;
+$secondaryColor: #54a2fc;
+$primaryError: #a30202;
+$secondaryError: #ff9595;
+$errorText: #800;
+$primaryValid: #0cb606;
+$secondaryValid: #91f88d;
+$priceText: #4d4d4d;
+$messageText: #8ac1ff;
+$commentsColor: #afc9ff;
+
+@mixin desktop {
+    @media (min-width: $mobileMaxWidth) {
+        @content;
+    }
+}
+
+@mixin vendor($attribute, $value, $vendors: (moz, ms, o, webkit)) {
+    @each $vendor in $vendors {
+        -#{$vendor -$attribute}: $value;
+    }
+    #{$attribute}: $value;
+}
