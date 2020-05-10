@@ -12,3 +12,10 @@ menuToggle.on("click", function () {
     backdrop.show("fast");
     sideDrawer.addClass("open");
 });
+
+$(window).resize(function () {
+    if ($(window).width() > 768) {
+        backdrop.hide();
+        sideDrawer.removeClass("open");
+    }
+})
