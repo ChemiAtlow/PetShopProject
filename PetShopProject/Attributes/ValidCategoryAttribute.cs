@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace PetShopProject.Attributes
 {
+    /// <summary>
+    /// A validation attribute, to check if given categoryId is of a valid category.
+    /// </summary>
     public class ValidCategoryAttribute : ValidationAttribute
     {
         private const string DefaultCategoryNotFoundMessage = "קטגוריה זו לא קיימת!";
         private const string DefaultErrorMessage = "יש להזין קטגוריה!";
-
+        /// <summary>
+        /// Message of Category no found error.
+        /// </summary>
         public string CategoryNotFoundMessage { get; set; }
         protected override ValidationResult IsValid(object value, ValidationContext validationContext)
         {
