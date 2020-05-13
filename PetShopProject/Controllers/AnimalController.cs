@@ -38,14 +38,14 @@ namespace PetShopProject.Controllers
         /// <param name="commentText">Text of comment.</param>
         /// <param name="animalId">Id of animal to append comments to.</param>
         [HttpPost]
-        public async Task<IActionResult> AddComment(string commentText, int animalId)
+        public async Task<IActionResult> AddComment(string commentText, int AnimalId)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    await repository.AddCommentAsync(commentText.Trim(), animalId);
-                    return RedirectToAction("Index", new { id = animalId });
+                    await repository.AddCommentAsync(commentText.Trim(), AnimalId);
+                    return RedirectToAction("Index", new { id = AnimalId });
                 }
                 throw new ArgumentException("The fields are invalid!");
             }

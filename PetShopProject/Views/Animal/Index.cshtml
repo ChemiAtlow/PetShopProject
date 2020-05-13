@@ -35,7 +35,7 @@
     <div class="centered animal-detail comment-wrapper">
         <h1>תגובות:</h1>
         <form class="animal-form" asp-action="AddComment">
-            <input type="hidden" value="@Model.AnimalId" name="animalId" />
+            <input type="hidden" asp-for="AnimalId">
             <div class="form-control">
                 <label for="commentText">הוסף תגובתך</label>
                 <textarea id="commentText" name="commentText" rows="3"></textarea>
